@@ -36,9 +36,9 @@ class ReactButton implements Button {
 }
 
 abstract class BaseApplication {
-    button:Button;
-    abstract createButton():Button;
-    abstract clickButton(event:Event):void;
+    button: Button;
+    abstract createButton(): Button;
+    abstract clickButton(event:Event): void;
 }
 
 class AngularApplication extends BaseApplication {
@@ -48,7 +48,7 @@ class AngularApplication extends BaseApplication {
         return this.button;
     }
 
-    clickButton(event:Event) {
+    clickButton(event: Event) {
         this.button.onClick(event)
     }
 }
