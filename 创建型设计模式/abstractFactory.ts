@@ -7,65 +7,73 @@
  * 实现
  */
 interface Checkbox {
-    style: string;
-    data: string[];
-    render(): void;
-    onClick(): void;
+  style: string;
+  data: string[];
+  render(): void;
+  onClick(): void;
 }
 
 interface Table {
-    hasBoard: boolean;
-    lineCount: number;
-    rowClick(): void;
+  hasBoard: boolean;
+  lineCount: number;
+  rowClick(): void;
 }
 
 class ReactCheckbox implements Checkbox {
-    style: 'circle';
-    data: ['A','B','C'];
-    render() { }
-    onClick() {}
+  style: "circle";
+  data: ["A", "B", "C"];
+  constructor() {}
+  render() {}
+  onClick() {}
 }
 
 class AngularCheckbox implements Checkbox {
-    style: 'square';
-    data: ['a','b','c'];
-    render() { }
-    onClick() {}
+  style: "square";
+  data: ["a", "b", "c"];
+  constructor() {}
+  render() {}
+  onClick() {}
 }
 
 class ReactTable implements Table {
-    hasBoard: true
-    lineCount: 3
-    rowClick(){ }
+  hasBoard: true;
+  lineCount: 3;
+  constructor() {}
+  rowClick() {}
 }
 
 class AngularTable implements Table {
-    hasBoard: false
-    lineCount: 4
-    rowClick(){}
+  hasBoard: false;
+  lineCount: 4;
+  constructor() {}
+  rowClick() {}
 }
 
 interface AbstractApplication {
-    createCheckbox(): Checkbox;
-    createTable(): Table;
+  createCheckbox(): Checkbox;
+  createTable(): Table;
 }
 
 class ReactApplication implements AbstractApplication {
-    createCheckbox() {
-        return new ReactCheckbox()
-    }
+  constructor() {}
 
-    createTable() {
-        return new ReactTable()
-    }
+  createCheckbox() {
+    return new ReactCheckbox();
+  }
+
+  createTable() {
+    return new ReactTable();
+  }
 }
 
 class AngularApplication implements AbstractApplication {
-    createCheckbox() {
-        return new AngularCheckbox()
-    }
+  constructor() {}
 
-    createTable() {
-        return new AngularTable()
-    }
+  createCheckbox() {
+    return new AngularCheckbox();
+  }
+
+  createTable() {
+    return new AngularTable();
+  }
 }
